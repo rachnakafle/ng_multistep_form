@@ -1,0 +1,85 @@
+<div class="container">
+  <h4 class="text-center">Angular 14 Multistep Form</h4>
+  <hr style="width: 100%" />
+  <form (ngSubmit) = "OnSubmit()">
+    <div *ngIf="steps == 1">
+      <h5>User Details</h5>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Full Name</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">User Name</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="steps == 2">
+      <h5>Contact Details</h5>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Moblie</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+    </div>
+
+    <div *ngIf="steps == 3">
+      <h5>Personal Details</h5>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Moblie</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+    <a class="btn btn-warning" *ngIf="steps != 1" (click)="previous()">Previous</a>
+    <button type="submit" class="btn btn-success mx-2" *ngIf="steps != 3">
+      Next
+    </button>
+    <button type="submit" class="btn btn-primary mx-2" *ngIf="steps == 3">
+      Submit
+    </button>
+  </form>
+</div>
+<router-outlet></router-outlet>
+<hr />
+
+<footer class="mt-5">
+  <p class="text-center">Rachana</p>
+</footer>
